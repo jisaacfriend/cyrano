@@ -1,10 +1,10 @@
 {
-  "name": "cyrano",
+  "name": "@jisaacfriend/cyrano",
   "version": "0.1.0",
   "description": "Swap Claude spinner verbs from curated lists",
   "type": "module",
   "bin": {
-    "cyrano": "./dist/index.js"
+    "cyrano": "dist/index.js"
   },
   "scripts": {
     "build": "tsup",
@@ -18,7 +18,11 @@
     "dist/",
     "lists/"
   ],
-  "keywords": ["claude", "spinner", "cli"],
+  "keywords": [
+    "claude",
+    "spinner",
+    "cli"
+  ],
   "license": "MIT",
   "dependencies": {
     "@inquirer/prompts": "^7.5.2"

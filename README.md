@@ -7,7 +7,7 @@ Cyrano is a CLI tool for swapping the spinner verbs that Claude Code displays wh
 ## Installation
 
 ```sh
-npm install -g cyrano
+npm install -g jisaacfriend/cyrano
 ```
 
 After installing, seed your verb lists directory with the bundled themes:
