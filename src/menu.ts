@@ -2,10 +2,18 @@ import { select } from '@inquirer/prompts';
 import type { LoadedVerbList } from './verbLists.js';
 
 export async function selectVerbList(lists: LoadedVerbList[]): Promise<LoadedVerbList> {
-  return select({
+  const choice = await select<LoadedVerbList | 'random'>({
     message: 'Select a verb list:',
-    choices: lists.map(list => ({ name: list.title, value: list })),
+    choices: [
+      { name: 'Random', value: 'random' as const },
+      ...lists.map(list => ({ name: list.title, value: list })),
+    ],
   });
+
+  if (choice === 'random') {
+    return lists[Math.floor(Math.random() * lists.length)];
+  }
+  return choice;
 }
 
 export async function selectMode(): Promise<'replace' | 'append'> {

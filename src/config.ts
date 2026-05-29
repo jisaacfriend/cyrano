@@ -1,8 +1,5 @@
 import { readFile, writeFile } from 'fs/promises';
-import { join } from 'path';
-import { homedir } from 'os';
-
-const SETTINGS_PATH = join(homedir(), '.claude', 'settings.json');
+import { settingsPath as SETTINGS_PATH } from './paths.js';
 
 export async function updateSpinnerVerbs(verbs: string[], mode: 'replace' | 'append'): Promise<void> {
   let settings: Record<string, unknown> = {};

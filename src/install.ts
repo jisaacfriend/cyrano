@@ -1,9 +1,9 @@
 import { copyFile, mkdir, readdir, access } from 'fs/promises';
 import { join, dirname } from 'path';
-import { homedir } from 'os';
 import { fileURLToPath } from 'url';
+import { verbListsDir } from './paths.js';
 
-const DEST_DIR = join(homedir(), '.claude', 'spinner-verbs');
+const DEST_DIR = verbListsDir;
 const LISTS_DIR = join(dirname(fileURLToPath(import.meta.url)), '..', 'lists');
 
 export async function installLists(): Promise<void> {

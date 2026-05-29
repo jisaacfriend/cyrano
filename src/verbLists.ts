@@ -1,6 +1,6 @@
 import { readdir, readFile } from 'fs/promises';
 import { join } from 'path';
-import { homedir } from 'os';
+import { verbListsDir } from './paths.js';
 
 export interface VerbList {
   title: string;
@@ -11,7 +11,7 @@ export interface LoadedVerbList extends VerbList {
   filePath: string;
 }
 
-const VERB_LISTS_DIR = join(homedir(), '.claude', 'spinner-verbs');
+const VERB_LISTS_DIR = verbListsDir;
 
 export async function loadVerbLists(): Promise<LoadedVerbList[]> {
   let files: string[];
